@@ -1,0 +1,21 @@
+<h1>Chico Juros Compostos, Venha fazer sua divida</h1>
+
+<div>Value:</div>
+<input type="number" step="0.01" [(ngModel)]="value" />
+
+<div>Interesses do Chico:</div>
+<input type="number" step="0.01" [(ngModel)]="rate" />
+
+<div>Meses do Chico!</div>
+<input type="number" [(ngModel)]="months" />
+<hr />
+<table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Value</th>
+  </tr>
+  <tr *ngFor="let item of getInterestValues(); index as i">
+    <td>{{ i + 1 }}</td>
+    <td>{{ item | currency }}</td>
+  </tr>
+</table>

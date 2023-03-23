@@ -1,0 +1,18 @@
+<hr />
+<h2>Números aleatórios</h2>
+<input type="number" [(ngModel)]="number" />
+<input type="button" value="Refresh" (click)="update()" />
+<br />
+<table>
+  <tr>
+    <th>Número</th>
+    <th>Par ou impar</th>
+  </tr>
+  <tr *ngFor="let number of getNumbers()">
+    <td>{{ number }}</td>
+    <td>
+      <span *ngIf="number % 2 == 0">PAR</span>
+      <span *ngIf="number % 2 != 0">IMPAR</span>
+    </td>
+  </tr>
+</table>
